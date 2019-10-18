@@ -20,9 +20,8 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public List<Book> findByTitle(String title) {
-        @SuppressWarnings("unchecked")
         TypedQuery<Book> query = sessionFactory.getCurrentSession()
-                .createQuery("from Book where title = :title");
+                .createQuery("from Book where title = :title", Book.class);
         query.setParameter("title", title);
         return query.getResultList();
     }

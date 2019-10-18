@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class UserDaoImpl implements UserDao {
-
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -20,8 +19,8 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> listUsers() {
-        @SuppressWarnings("unchecked")
-        TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery("from User");
+        TypedQuery<User> query = sessionFactory.getCurrentSession()
+                .createQuery("from User", User.class);
         return query.getResultList();
     }
 }
