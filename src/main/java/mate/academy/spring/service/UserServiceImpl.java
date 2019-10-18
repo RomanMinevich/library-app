@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImpl implements UserService {
-
     @Autowired
     private UserDao userDao;
 
@@ -24,5 +23,4 @@ public class UserServiceImpl implements UserService {
     public List<User> listUsers() {
         return userDao.listUsers();
     }
-
 }

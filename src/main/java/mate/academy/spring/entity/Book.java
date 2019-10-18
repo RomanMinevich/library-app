@@ -13,13 +13,19 @@ import javax.persistence.Table;
 public class Book {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    Long id;
-    String title;
-    Integer year;
+    private Long id;
+    private String title;
+    private Integer year;
     @Column(columnDefinition = "DECIMAL")
-    Double price;
+    private Double price;
 
     public Book() {
+    }
+
+    public Book(String title, Integer year, Double price) {
+        this.title = title;
+        this.year = year;
+        this.price = price;
     }
 
     public Long getId() {

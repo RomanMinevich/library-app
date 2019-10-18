@@ -5,7 +5,7 @@ import mate.academy.spring.entity.Book;
 
 public interface BookService {
 
-    Book add(Book book);
+    void add(Book book);
 
-    List<Book> findByTitle(String title);
+    List<Book> listBooks();
 }
