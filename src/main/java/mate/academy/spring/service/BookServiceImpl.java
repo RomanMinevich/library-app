@@ -14,13 +14,13 @@ public class BookServiceImpl implements BookService {
 
     @Transactional
     @Override
-    public void add(Book book) {
-        bookDao.add(book);
+    public Book add(Book book) {
+        return bookDao.add(book);
     }
 
     @Transactional(readOnly = true)
     @Override
-    public List<Book> listBooks() {
-        return bookDao.listBooks();
+    public List<Book> findByTitle(String title) {
+        return bookDao.findByTitle(title);
     }
 }

@@ -33,7 +33,7 @@ public class MainApp {
         bookService.add(new Book("King Lear", 1965, 22D));
         bookService.add(new Book("Macbeth", 2017, 110D));
 
-        for (Book book : bookService.listBooks()) {
+        for (Book book : bookService.findByTitle("Hamlet")) {
             System.out.println("Id = " + book.getId());
             System.out.println("Title = " + book.getTitle());
             System.out.println("Year = " + book.getYear());
