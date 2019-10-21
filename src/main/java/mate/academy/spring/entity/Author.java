@@ -1,5 +1,6 @@
 package mate.academy.spring.entity;
 
+import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.GenerationType.IDENTITY;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class Author {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authors", cascade = ALL)
     private List<Book> books;
 
     public Author() {

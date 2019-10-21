@@ -7,7 +7,7 @@ public interface AuthorService {
 
     Author add(Author author);
 
-    List< Author> findByLastName(String lastName);
+    List<Author> findByLastName(String lastName);
 
-    List< Author> findByFullName(String name, String lastName);
+    List<Author> findByFullName(String name, String lastName);
 }

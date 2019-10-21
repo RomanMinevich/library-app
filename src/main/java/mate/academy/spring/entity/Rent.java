@@ -1,5 +1,6 @@
 package mate.academy.spring.entity;
 
+import static javax.persistence.CascadeType.DETACH;
 import static javax.persistence.GenerationType.IDENTITY;
 
 import java.time.LocalDate;
@@ -20,10 +21,10 @@ public class Rent {
     private Long id;
     @Column(name = "date", columnDefinition = "DATE")
     private LocalDate rentDate;
-    @ManyToOne
+    @ManyToOne(cascade = DETACH)
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
     private User user;
-    @OneToOne
+    @OneToOne(cascade = DETACH)
     @JoinColumn(name = "book_id")
     private Book book;
     @Column(columnDefinition = "TINYINT")

@@ -1,5 +1,6 @@
 package mate.academy.spring.entity;
 
+import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.GenerationType.IDENTITY;
 
 import java.util.List;
@@ -19,11 +20,11 @@ public class Book {
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
     private String title;
-    @ManyToMany
+    @ManyToMany(cascade = ALL)
     @JoinTable(name = "books_authors",
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "author_id"))
-    private List< Author> authors;
+    private List<Author> authors;
     private Integer year;
     @Column(columnDefinition = "DECIMAL")
     private Double price;

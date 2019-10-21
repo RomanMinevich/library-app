@@ -30,9 +30,9 @@ public class AuthorServiceImpl implements AuthorService {
     @Transactional(readOnly = true)
     @Override
     public List<Author> findByFullName(String firstName, String lastName) {
-         return findByLastName(lastName)
-                 .stream()
-                 .filter(author -> author.getLastName().equals(lastName))
-                 .collect(Collectors.toList());
+        return findByLastName(lastName)
+                .stream()
+                .filter(author -> author.getLastName().equals(lastName))
+                .collect(Collectors.toList());
     }
 }
