@@ -40,7 +40,7 @@ public class MainApp {
         bookService.add(book2);
         bookService.add(new Book("Macbeth", 2017, 110D));
 
-        for (Book book : bookService.findByTitle("Hamlet")) {
+        for (Book book : bookService.findByTitle("King")) {
             System.out.println("Id = " + book.getId());
             System.out.println("Title = " + book.getTitle());
             System.out.println("Year = " + book.getYear());
@@ -53,7 +53,7 @@ public class MainApp {
         authorService.add(new Author("William", "Shakespeare"));
         authorService.add(new Author("James", "Joyce"));
 
-        for (Author author: authorService.findByFullName(
+        for (Author author: authorService.findByName(
                 "William", "Shakespeare")) {
             System.out.println("Id = " + author.getId());
             System.out.println();

@@ -1,7 +1,7 @@
 package mate.academy.spring.service.impl;
 
 import java.util.List;
-import java.util.stream.Collectors;
+//import java.util.stream.Collectors;
 import mate.academy.spring.dao.AuthorDao;
 import mate.academy.spring.entity.Author;
 import mate.academy.spring.service.AuthorService;
@@ -21,7 +21,7 @@ public class AuthorServiceImpl implements AuthorService {
         return author;
     }
 
-    @Transactional(readOnly = true)
+    /*@Transactional(readOnly = true)
     @Override
     public List<Author> findByLastName(String lastName) {
         return authorDao.findByLastName(lastName);
@@ -34,5 +34,11 @@ public class AuthorServiceImpl implements AuthorService {
                 .stream()
                 .filter(author -> author.getFirstName().equals(firstName))
                 .collect(Collectors.toList());
+    }*/
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Author> findByName(String firstName, String lastName) {
+        return authorDao.findByName(firstName, lastName);
     }
 }
