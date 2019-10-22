@@ -32,7 +32,7 @@ public class AuthorServiceImpl implements AuthorService {
     public List<Author> findByFullName(String firstName, String lastName) {
         return findByLastName(lastName)
                 .stream()
-                .filter(author -> author.getLastName().equals(lastName))
+                .filter(author -> author.getFirstName().equals(firstName))
                 .collect(Collectors.toList());
     }
 }
