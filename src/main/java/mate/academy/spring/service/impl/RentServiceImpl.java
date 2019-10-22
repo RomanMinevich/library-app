@@ -1,7 +1,6 @@
 package mate.academy.spring.service.impl;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import mate.academy.spring.dao.RentDao;
 import mate.academy.spring.entity.Book;
@@ -28,13 +27,7 @@ public class RentServiceImpl implements RentService {
     @Transactional
     @Override
     public Rent returnBook(User user, Book book) {
-        Optional<Rent> rent = libraryDao.getByUser(user)
-                .stream()
-                .filter(value -> value.getBook().equals(book))
-                .peek(value -> value.setActive(false))
-                .findAny();
-        rent.ifPresent(value -> libraryDao.update(value));
-        return rent.orElse(null);
+        return libraryDao.returnBook(user, book);
     }
 
     @Transactional(readOnly = true)

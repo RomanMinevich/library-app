@@ -7,5 +7,5 @@ public interface AuthorDao {
 
     void add(Author author);
 
-    List<Author> findByName(String firstName, String lastName);
+    List<Author> findByNameAndSurname(String firstName, String lastName);
 }

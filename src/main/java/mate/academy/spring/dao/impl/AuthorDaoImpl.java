@@ -19,7 +19,7 @@ public class AuthorDaoImpl implements AuthorDao {
     }
 
     @Override
-    public List<Author> findByName(String firstName, String lastName) {
+    public List<Author> findByNameAndSurname(String firstName, String lastName) {
         TypedQuery<Author> query = sessionFactory.getCurrentSession()
                 .createQuery("from Author where firstName like :firstName "
                         + "and lastName like :lastName", Author.class);

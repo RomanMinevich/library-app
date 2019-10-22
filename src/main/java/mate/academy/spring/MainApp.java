@@ -53,7 +53,7 @@ public class MainApp {
         authorService.add(new Author("William", "Shakespeare"));
         authorService.add(new Author("James", "Joyce"));
 
-        for (Author author: authorService.findByName(
+        for (Author author: authorService.findByNameAndSurname(
                 "William", "Shakespeare")) {
             System.out.println("Id = " + author.getId());
             System.out.println();
