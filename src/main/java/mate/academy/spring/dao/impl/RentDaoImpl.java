@@ -6,8 +6,8 @@ import mate.academy.spring.dao.RentDao;
 import mate.academy.spring.entity.Book;
 import mate.academy.spring.entity.Rent;
 import mate.academy.spring.entity.User;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -22,16 +22,12 @@ public class RentDaoImpl implements RentDao {
     }
 
     @Override
-    public Rent returnBook(User user, Book book) {
-        Session session = sessionFactory.getCurrentSession();
-        TypedQuery<Rent> query = session.createQuery(
-                        "from Rent where user = :user and book = :book", Rent.class);
+    public void returnBook(User user, Book book) {
+        Query query = sessionFactory.getCurrentSession().createQuery(
+                "update Rent set active = false where user = :user and book = :book");
         query.setParameter("user", user);
         query.setParameter("book", book);
-        Rent rent = query.getSingleResult();
-        rent.setActive(false);
-        session.update(rent);
-        return rent;
+        query.executeUpdate();
     }
 
     @Override

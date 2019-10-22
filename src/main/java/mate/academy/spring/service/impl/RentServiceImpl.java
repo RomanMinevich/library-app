@@ -26,8 +26,8 @@ public class RentServiceImpl implements RentService {
 
     @Transactional
     @Override
-    public Rent returnBook(User user, Book book) {
-        return libraryDao.returnBook(user, book);
+    public void returnBook(User user, Book book) {
+        libraryDao.returnBook(user, book);
     }
 
     @Transactional(readOnly = true)

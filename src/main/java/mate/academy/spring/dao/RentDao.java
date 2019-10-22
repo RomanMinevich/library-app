@@ -9,7 +9,7 @@ public interface RentDao {
 
     void add(Rent rent);
 
-    Rent returnBook(User user, Book book);
+    void returnBook(User user, Book book);
 
     List<Rent> getByUser(User user);
 }
