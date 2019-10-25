@@ -7,5 +7,9 @@ public interface BookService {
 
     Book add(Book book);
 
+    Book get(Long id);
+
     List<Book> findByTitle(String title);
+
+    List<Book> listBooks();
 }

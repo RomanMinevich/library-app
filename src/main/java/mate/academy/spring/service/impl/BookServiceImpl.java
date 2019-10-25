@@ -22,7 +22,19 @@ public class BookServiceImpl implements BookService {
 
     @Transactional(readOnly = true)
     @Override
+    public Book get(Long id) {
+        return bookDao.get(id);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
     public List<Book> findByTitle(String title) {
         return bookDao.findByTitle(title);
+    }
+
+    @Transactional(readOnly = true)
+    @Override
+    public List<Book> listBooks() {
+        return bookDao.listBooks();
     }
 }

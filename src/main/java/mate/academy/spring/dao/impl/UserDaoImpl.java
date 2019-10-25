@@ -18,6 +18,12 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public User get(Long id) {
+        return sessionFactory.getCurrentSession()
+                .get(User.class, id);
+    }
+
+    @Override
     public List<User> listUsers() {
         return sessionFactory.getCurrentSession()
                 .createQuery("from User", User.class)
