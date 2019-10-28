@@ -14,14 +14,12 @@
                     <th>Title</th>
                     <th>Year</th>
                     <th>Price</th>
-                    <th>Authors</th>
                 </tr>
                     <tr>
                         <td><c:out value="${book.id}"/></td>
                         <td><c:out value="${book.title}"/></td>
                         <td><c:out value="${book.year}"/></td>
                         <td><c:out value="${book.price}"/></td>
-                        <td><c:out value="${book.authors}"/></td>
                     </tr>
             </table>
         </form>
