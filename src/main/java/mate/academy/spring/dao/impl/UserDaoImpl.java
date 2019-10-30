@@ -24,6 +24,12 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public User findByUsername(String login) {
+        return sessionFactory.getCurrentSession()
+                .get(User.class, login);
+    }
+
+    @Override
     public List<User> listUsers() {
         return sessionFactory.getCurrentSession()
                 .createQuery("from User", User.class)
