@@ -3,7 +3,7 @@ package mate.academy.spring.dto;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import mate.academy.spring.annotations.Matched;
-import mate.academy.spring.annotations.Valid;
+import mate.academy.spring.annotations.ValidEmail;
 
 @Matched
 public class UserRegistrationDto {
@@ -18,7 +18,7 @@ public class UserRegistrationDto {
     private String lastName;
     @NotNull
     @NotEmpty
-    @Valid
+    @ValidEmail
     private String email;
     @NotNull
     @NotEmpty

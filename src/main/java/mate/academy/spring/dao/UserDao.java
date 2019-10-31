@@ -1,6 +1,7 @@
 package mate.academy.spring.dao;
 
 import java.util.List;
+import java.util.Optional;
 import mate.academy.spring.entity.User;
 
 public interface UserDao {
@@ -9,7 +10,7 @@ public interface UserDao {
 
     User get(Long id);
 
-    User findByUsername(String login);
+    Optional<User> findByUsername(String username);
 
     List<User> listUsers();
 }

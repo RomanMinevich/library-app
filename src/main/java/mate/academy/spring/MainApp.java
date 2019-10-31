@@ -1,7 +1,6 @@
 package mate.academy.spring;
 
 import java.sql.SQLException;
-
 import mate.academy.spring.config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

@@ -21,11 +21,8 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
-
-        User user = userDao.findByUsername(username);
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found");
-        }
+        User user = userDao.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(),
                 user.getPassword(),
@@ -35,7 +32,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     private static List<String> getRoleNames(List roles) {
         List<String> names = new ArrayList<>();
         for (Object role : roles) {
-            names.add(((Role) role).getName());
+            names.add(((Role)role).getName());
         }
         return names;
     }
