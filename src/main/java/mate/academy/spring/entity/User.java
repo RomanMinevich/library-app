@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import org.springframework.context.annotation.Role;
 
 @Entity
 @Table(name = "users")

@@ -29,10 +29,10 @@ public class CustomUserDetailsService implements UserDetailsService {
                 getAuthorities(getRoleNames(user.getRoles())));
     }
 
-    private static List<String> getRoleNames(List roles) {
+    private static List<String> getRoleNames(List<Role> roles) {
         List<String> names = new ArrayList<>();
-        for (Object role : roles) {
-            names.add(((Role)role).getName());
+        for (Role role : roles) {
+            names.add(role.getName());
         }
         return names;
     }
