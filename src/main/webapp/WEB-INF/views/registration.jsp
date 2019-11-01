@@ -18,9 +18,9 @@
             <label><b>Email</b></label>
             <input type="text" placeholder="" name="Email" required>
             <label><b>Password</b></label>
-            <input type="password" placeholder="" name="Password">
+            <input type="password" placeholder="" name="Password" required>
             <label><b>Repeat password</b></label>
-            <input type="password" placeholder="" name="Repeat password">
+            <input type="password" placeholder="" name="Repeat password" required>
             <button type="submit">Register</button>
         </div>
         </form>
